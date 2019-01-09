@@ -1,0 +1,35 @@
+
+
+img {
+  height: 100px;
+  width: 100px;
+  /* border: solid;
+  padding: 10px; */
+  margin: 10px;
+  box-shadow: 7px 7px 5px grey;
+  border-radius: 5%;
+}
+
+#rock {
+  float: left;
+}
+
+#paper {
+  float: left;
+}
+
+#scissors {
+  float: right;
+}
+
+#userscore {
+  float: left;
+}
+
+#cpuscore {
+  float: left;
+}
+
+.scores {
+  padding: 5px;
+}
