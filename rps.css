@@ -1,13 +1,13 @@
 
 
-img {
+button {
   height: 100px;
   width: 100px;
   /* border: solid;
   padding: 10px; */
   margin: 10px;
   box-shadow: 7px 7px 5px grey;
-  border-radius: 5%;
+  border-radius: 15%;
 }
 
 #rock {
@@ -19,7 +19,7 @@ img {
 }
 
 #scissors {
-  float: right;
+  /* float: right; */
 }
 
 #userscore {

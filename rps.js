@@ -39,6 +39,11 @@ function userPlay() {
       return userSelection;
     });
   });
+
+  const userMoveDisplay = document.querySelector('#userscore');
+
+  const userMove = document.createElement('h3')
+  userMove.textContent = userSelection;
 }
 
 // CPU SELECTION
