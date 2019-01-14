@@ -28,7 +28,6 @@ window.onload = function() {
 
       cpuMoveDisplay.appendChild(cpuMove);
 
-
       });
     });
   // };
@@ -52,17 +51,3 @@ function computerPlay() {
     console.log("CPU selected: " + cpuSelection);
 
 }
-
-// const cpuSelects = document.querySelectorAll('button');
-//   cpuSelects.forEach((cpuSelect) => {
-//     cpuSelect.addEventListener('click', computerPlay);
-//
-    // const cpuMoveDisplay = document.querySelector('#cpuPick')
-    //
-    // const cpuMove = document.createElement('p')
-    // cpuMove.textContent = computerPlay();
-    // cpuMove.classList.add('onClickcpuDisplay');
-    //
-    // cpuMoveDisplay.appendChild(cpuMove);
-//
-//     });
