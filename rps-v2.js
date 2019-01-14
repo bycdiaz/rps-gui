@@ -10,8 +10,8 @@ window.onload = function() {
       // adds event listener to each button
       button.addEventListener('click', (e) => {
       let userSelection = button.id;
-      console.log(userSelection);
 
+      // appends user move to HTML
       const userMoveDisplay = document.querySelector('#userPick')
 
       const userMove = document.createElement('p')
@@ -19,7 +19,9 @@ window.onload = function() {
       userMove.classList.add('onClickUserDisplay');
 
       userMoveDisplay.appendChild(userMove);
+      console.log("User selected: " + userSelection + ".");
 
+      // appends CPU move to HTML
       const cpuMoveDisplay = document.querySelector('#cpuPick')
 
       const cpuMove = document.createElement('p')
@@ -27,6 +29,7 @@ window.onload = function() {
       cpuMove.classList.add('onClickcpuDisplay');
 
       cpuMoveDisplay.appendChild(cpuMove);
+      console.log("CPU selected: " + computerPlay() + ".");
 
       });
     });
@@ -48,6 +51,5 @@ function computerPlay() {
         return 'scissors';
     }
     const cpuSelection = computerPlay();
-    console.log("CPU selected: " + cpuSelection);
 
 }
