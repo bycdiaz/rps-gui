@@ -12,7 +12,7 @@ window.onload = function() {
       let userSelection = button.id;
       console.log(userSelection);
 
-      const userMoveDisplay = document.querySelector('.userPick')
+      const userMoveDisplay = document.querySelector('#userPick')
 
       const userMove = document.createElement('p')
       userMove.textContent = userSelection;
@@ -20,10 +20,43 @@ window.onload = function() {
 
       userMoveDisplay.appendChild(userMove);
 
-
-
-
       });
     });
   // };
+
+
+  // CPU SELECTION
+  function computerPlay() {
+
+      // Generate random number
+      let randomNumber = Math.floor((Math.random() * 3) + 1);
+
+      if (randomNumber === 1)  {
+          return 'rock';
+      } else if (randomNumber === 2) {
+          return 'paper';
+      } else {
+          return 'scissors';
+      }
+      const cpuSelection = computerPlay();
+      console.log("CPU selected: " + cpuSelection);
+
+  }
+
+  const cpuSelects = document.querySelectorAll('button');
+    cpuSelects.forEach((cpuSelect) => {
+      cpuSelect.addEventListener('click', computerPlay);
+
+      const cpuMoveDisplay = document.querySelector('#cpuPick')
+
+      const cpuMove = document.createElement('p')
+      cpuMove.textContent = computerPlay();
+      cpuMove.classList.add('onClickcpuDisplay');
+
+      cpuMoveDisplay.appendChild(cpuMove);
+
+      });
+
+
+
 }
