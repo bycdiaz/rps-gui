@@ -25,7 +25,8 @@ window.onload = function() {
       const cpuMoveDisplay = document.querySelector('#cpuPick')
 
       const cpuMove = document.createElement('p');
-      cpuMove.textContent = computerPlay();
+      const cpuSelection = computerPlay();
+      cpuMove.textContent = cpuSelection;
       cpuMove.classList.add('onClickcpuDisplay');
 
       cpuMoveDisplay.appendChild(cpuMove);
@@ -33,11 +34,31 @@ window.onload = function() {
 
       // appends comparison to HTML
       const comparisonDisplay = document.querySelector("#roundOutcome")
+      const compareMoves = playRound(userSelection,cpuSelection);
 
       const movesCompared = document.createElement('p');
       movesCompared.textContent = compareMoves;
 
       comparisonDisplay.appendChild(movesCompared);
+
+      // appends scores
+
+      // user score
+      const displayUserScore = document.querySelector("#userscore");
+
+      const userScoreDisplay = document.createElement('p');
+      userScoreDisplay.textContent = userScore;
+
+      displayUserScore.appendChild(userScoreDisplay);
+
+      // cpu score
+      const displayCPUScore = document.querySelector("#cpuscore");
+
+      const cpuScoreDisplay = document.createElement('p');
+      cpuScoreDisplay.textContent = cpuScore;
+
+      displayCPUScore.appendChild(cpuScoreDisplay);
+
 
       });
     });
@@ -58,10 +79,11 @@ function computerPlay() {
     } else {
         return 'scissors';
     }
-    const cpuSelection = computerPlay();
+
 
 }
 
+// comparing user selection with cpu selection
 function playRound(userSelection,cpuSelection) {
 
 
@@ -100,6 +122,8 @@ function playRound(userSelection,cpuSelection) {
         }
     }
 
-    const compareMoves = playRound();
-
 }
+
+// score counters
+let userScore = 0;
+let cpuScore = 0;
