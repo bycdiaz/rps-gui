@@ -41,9 +41,9 @@ window.onload = function() {
 
       comparisonDisplay.appendChild(movesCompared);
 
-      // appends scores
+      // appends scores counters
 
-      // user score
+      // user score counter
       const displayUserScore = document.querySelector("#userscore");
 
       const userScoreDisplay = document.createElement('p');
@@ -51,7 +51,7 @@ window.onload = function() {
 
       displayUserScore.appendChild(userScoreDisplay);
 
-      // cpu score
+      // cpu score counter
       const displayCPUScore = document.querySelector("#cpuscore");
 
       const cpuScoreDisplay = document.createElement('p');
