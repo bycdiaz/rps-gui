@@ -112,8 +112,8 @@ function computerPlay() {
     // const userSelection = prompt("Enter: Rock, Paper, or Scissors.").toLowerCase();
     // console.log("The human has selected: " + userSelection + ".");\
 
-    // if (userScore === 5) {
-    //     return "The human wins!";
-    // } else {
-    //     return "The computer wins!";
-    // }
+    if (userScore === 5) {
+        return "The human wins!";
+    } else {
+        return "The computer wins!";
+    }

@@ -79,8 +79,6 @@ function computerPlay() {
     } else {
         return 'scissors';
     }
-
-
 }
 
 // comparing user selection with cpu selection
@@ -121,9 +119,22 @@ function playRound(userSelection,cpuSelection) {
             return "Scissors can't beat scissors. This is a draw."
         }
     }
-
 }
 
 // score counters
 let userScore = 0;
 let cpuScore = 0;
+
+function firstToFive() {
+  while (userScore < 5 && cpuScore < 5) {
+            playRound();
+        }
+}
+
+function declareWinner() {
+  if (userScore === 5) {
+      return "The human wins!";
+  } else {
+      return "The computer wins!";
+  }
+}
