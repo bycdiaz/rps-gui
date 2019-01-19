@@ -149,13 +149,6 @@ function checkScore() {
   }
 };
 
-// function firstToFive() {
-//   while (userScore < 5 && cpuScore < 5) {
-//             playRound();
-//         }
-// }
-//
-//
 function declareWinner() {
   if (userScore === 5) {
       return "The human wins!";
