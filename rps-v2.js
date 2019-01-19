@@ -1,6 +1,6 @@
 
 window.onload = function() {
-  // function userPlay() {
+
     // Selecting all nodes with an image tag.
     const button = document.querySelectorAll('button');
 
@@ -9,6 +9,11 @@ window.onload = function() {
 
       // adds event listener to each button
       button.addEventListener('click', (e) => {
+
+      //check scores
+      checkScore();
+
+      // identifies user selection
       let userSelection = button.id;
 
       // appends user move to HTML
@@ -59,10 +64,8 @@ window.onload = function() {
 
       displayCPUScore.appendChild(cpuScoreDisplay);
 
-
       });
     });
-  // };
 
 }
 
@@ -125,12 +128,34 @@ function playRound(userSelection,cpuSelection) {
 let userScore = 0;
 let cpuScore = 0;
 
-function firstToFive() {
-  while (userScore < 5 && cpuScore < 5) {
-            playRound();
-        }
-}
+function checkScore() {
+  if (userScore <= 4 && cpuScore <= 4) {
+    playRound();
+  } else {
+    console.log("Game Over!");
 
+    // display winner
+    const winnerDisplay = document.querySelector('#declareWinner')
+
+    const winnerShow = document.createElement('p')
+    winnerShow.textContent = winner;
+    winnerShow.classList.add('onClickUserDisplay');
+
+    winnerDisplay.appendChild(winnerShow);
+
+
+    button.removeEventListener('click', (e) => {
+    });
+  }
+};
+
+// function firstToFive() {
+//   while (userScore < 5 && cpuScore < 5) {
+//             playRound();
+//         }
+// }
+//
+//
 function declareWinner() {
   if (userScore === 5) {
       return "The human wins!";
@@ -138,3 +163,5 @@ function declareWinner() {
       return "The computer wins!";
   }
 }
+
+let winner = declareWinner();

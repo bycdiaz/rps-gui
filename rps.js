@@ -16,10 +16,10 @@ window.onload = function() {
 };
 
 
-// loop to run game until user or cpu reach 5
-// while (userScore < 5 && cpuScore < 5) {
-//     playRound();
-// }
+loop to run game until user or cpu reach 5
+while (userScore < 5 && cpuScore < 5) {
+    playRound();
+}
 
 let userScore = 0;
 let cpuScore = 0;

@@ -9,7 +9,7 @@ button {
   box-shadow: 7px 7px 5px grey;
   border-radius: 15%;
 }
-
+/*
 #rock {
   float: left;
 }
@@ -19,7 +19,7 @@ button {
 }
 
 #scissors {
-  /* float: right; */
+  float: right;
 }
 
 #userscore {
@@ -27,9 +27,21 @@ button {
 }
 
 #cpuscore {
+  float: right;
+}
+
+#cpuPick {
   float: left;
 }
 
+#userPick {
+  float: right;
+}
+
+#roundOutcome {
+  display: block;
+}
+*/
 .scores {
   padding: 5px;
 }
