@@ -140,9 +140,7 @@ function checkScore() {
     const winnerShow = document.createElement('p')
     winnerShow.textContent = winner;
     winnerShow.classList.add('onClickUserDisplay');
-
     winnerDisplay.appendChild(winnerShow);
-
 
     button.removeEventListener('click', (e) => {
     });
@@ -151,8 +149,10 @@ function checkScore() {
 
 function declareWinner() {
   if (userScore === 5) {
+      console.log("The human wins!");
       return "The human wins!";
   } else {
+      console.log("The computer wins!");
       return "The computer wins!";
   }
 }
