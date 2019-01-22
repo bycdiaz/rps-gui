@@ -2,10 +2,10 @@
 window.onload = function() {
 
     // Selecting all nodes with an image tag.
-    const button = document.querySelectorAll('button');
+    const buttons = document.querySelectorAll('button');
 
     // .forEach loops through each button
-    button.forEach((button) => {
+    buttons.forEach((button) => {
 
       // adds event listener to each button
       button.addEventListener('click', (e) => {
