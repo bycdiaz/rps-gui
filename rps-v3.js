@@ -6,6 +6,7 @@ const display = document.querySelector('#display');
 // these two were originally const, not let
 let userScore;
 let cpuScore;
+let draw;
 
 initializeGame();
 
@@ -13,6 +14,7 @@ function initializeGame() {
 
 userScore = 0;
 cpuScore = 0;
+draw = 0;
 
 buttons.forEach(button => {
   button.addEventListener('click', selections)
@@ -25,8 +27,16 @@ function selections(event) {
   let roundResult = playRound(userSelection,cpuSelection);
   console.log("Player selected: " + userSelection);
   console.log("CPU selected: " + cpuSelection);
-  console.log("The winner of this round is: " + roundResult);
+  console.log("Round Result: " + roundResult);
+  displayScores();
 
+  if (userScore === 5 || cpuScore === 5) {
+    // do what you just did right here
+    console.log("Game OVER");
+    declareWinner();
+  } else {
+    console.log(roundResult);
+  }
 }
 
 function computerPlay() {
@@ -44,40 +54,73 @@ function computerPlay() {
 }
 
 function playRound(userSelection,cpuSelection) {
-
-
-    // round outcomes
     if (userSelection === "rock") {
         if (cpuSelection === "paper") {
             cpuScore++;
-            return "Paper beats rock. You lose!";
+            return "CPU Wins!";
         } else if (cpuSelection === "scissors") {
             userScore++;
-            return "Rock beats scissors. You win!";
+            return "You win!";
         } else if (userSelection === cpuSelection) {
-            return "Rock can't beat rock. This is a draw.";
+            draw++
+            return "Draw.";
         }
 
     } else if (userSelection === "paper") {
         if (cpuSelection === "rock") {
             userScore++;
-            return "Paper beats rock. You win!"
+            return "You win!"
         } else if (cpuSelection === "scissors") {
             cpuScore++;
-            return "Scissors beats paper. You lose!"
+            return "CPU Wins!"
         } else if (userSelection === cpuSelection) {
-            return "Paper can't beat paper. This is a draw."
+            draw++
+            return "Draw."
         }
 
     } else if (userSelection === "scissors") {
         if (cpuSelection === "rock") {
             cpuScore++;
-            return "Rock beats scissors. You lose!"
+            return "CPU Wins!"
         } else if (cpuSelection === "paper") {
             userScore++;
-            return "Scissors beats paper. You win!"
+            return "You win!"
         } else if (userSelection === cpuSelection) {
-            return "Scissors can't beat scissors. This is a draw."
+            draw++
+            return "Draw."
         }
     }
 };
+
+function displayScores() {
+  display.innerHTML = '';
+  const allScores = document.createElement('p');
+  allScores.innerText = `Player Score: ${userScore} Computer Score: ${cpuScore}`;
+
+  display.appendChild(allScores);
+
+}
+
+function declareWinner() {
+
+  let displayWinner = document.createElement('h4')
+
+  if (userScore >= 5) {
+    displayWinner.innerText = "You win!"
+    buttons.forEach(button => {
+      button.removeEventListener('click', selections)
+    });
+  } else if (cpuScore >= 5) {
+    displayWinner.innerText = "Sucks to be you. The computer wins!"
+    buttons.forEach(button => {
+      button.removeEventListener('click', selections)
+    });
+  } else {
+    displayWinner.innerText = "This game is a draw!"
+    buttons.forEach(button => {
+      button.removeEventListener('click', selections)
+    });
+  }
+
+  display.appendChild(displayWinner);
+}
