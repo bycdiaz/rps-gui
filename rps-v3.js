@@ -95,7 +95,7 @@ function playRound(userSelection,cpuSelection) {
 function displayScores() {
   display.innerHTML = '';
   const allScores = document.createElement('p');
-  allScores.innerText = `Player Score: ${userScore} Computer Score: ${cpuScore}`;
+  allScores.innerText = `Player Score: ${userScore} Computer Score: ${cpuScore} # of Draws: ${draw}`;
 
   display.appendChild(allScores);
 
